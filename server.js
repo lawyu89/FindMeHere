@@ -25,11 +25,11 @@ passport.deserializeUser(function(obj, done) {
 });
 
 //app configuration
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public/views');
+app.use(express.static(__dirname + '/public'));
 app.engine('html', require('ejs').renderFile);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(__dirname + '/public'));
 
 //passport oauth configuration
 passport.use(new FacebookStrategy({
@@ -44,7 +44,25 @@ passport.use(new FacebookStrategy({
 ));
 
 //setup routes
+app.get('/', function(req,res){
+  res.render('index.html')
+})
 
+app.get('/auth/facebook', passport.authenticate('facebook'),
+  function(req, res){
+})
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 
 
