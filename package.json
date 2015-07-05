@@ -1,0 +1,23 @@
+{
+  "name": "FindMeHere",
+  "version": "1.0.0",
+  "description": "Simple app to locate friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lawyu89/FindMeHere.git"
+  },
+  "author": "lawyu89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lawyu89/FindMeHere/issues"
+  },
+  "homepage": "https://github.com/lawyu89/FindMeHere",
+  "dependencies": {
+    "express": "^4.13.0",
+    "passport": "^0.2.2"
+  }
+}
