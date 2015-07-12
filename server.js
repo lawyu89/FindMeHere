@@ -45,7 +45,7 @@ passport.use(new FacebookStrategy({
 
 //setup routes
 app.get('/', function(req,res){
-  res.render('index.html')
+  res.render('login.html')
 })
 
 app.get('/auth/facebook', passport.authenticate('facebook'),
@@ -70,3 +70,12 @@ app.get('/logout', function(req, res){
 
 app.listen(8080);
 console.log("Listening on port 8080");
+
+
+//check for authentication
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/')
+}
