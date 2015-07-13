@@ -1,11 +1,9 @@
 {
   "name": "FindMeHere",
   "version": "1.0.0",
-  "private": true,
   "description": "Simple app to locate friends",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
   },
   "repository": {
     "type": "git",
@@ -23,7 +21,6 @@
     "mongoose": "^4.0.6",
     "passport": "^0.2.2",
     "passport-facebook": "^2.0.0",
-    "passport-google": "^0.3.0",
-    "react-native": "^0.7.1"
+    "passport-google": "^0.3.0"
   }
 }
